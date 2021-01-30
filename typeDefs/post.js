@@ -10,4 +10,8 @@ module.exports = gql`
     counter: Int!
     allPosts: [Post!]!
   }
+  # mutations
+  type Mutation {
+    newPost(title: String!, description: String!): Post!
+  }
 `;
