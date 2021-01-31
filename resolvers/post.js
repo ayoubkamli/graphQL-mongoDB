@@ -13,8 +13,7 @@ const newPost = (parent, args) => {
   // create new post object
   const post = {
     id: posts.length + 1,
-    title: args.title,
-    description: args.description,
+    ...args.input,
   };
   posts.push(post);
   return post;
