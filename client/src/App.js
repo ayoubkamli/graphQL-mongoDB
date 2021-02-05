@@ -1,7 +1,20 @@
-import logo from "./logo.svg";
+import React from "react";
+import ApolloClient from "apollo-boost";
+import { ApolloProvider } from "@apollo/react-hooks";
 
-function App() {
-  return <p>hello</p>;
-}
+//import cmponents
+import Home from "./pages/Home";
+
+const client = new ApolloClient({
+  uri: process.env.REACT_APP_GRAPHQL_ENDPOINT,
+});
+
+const App = () => {
+  return (
+    <ApolloProvider client={client}>
+      <Home />
+    </ApolloProvider>
+  );
+};
 
 export default App;

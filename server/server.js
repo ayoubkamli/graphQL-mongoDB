@@ -1,8 +1,8 @@
 const express = require("express");
 const { ApolloServer } = require("apollo-server-express");
 const path = require("path");
-const { db } = require("../databse/dbConfig");
-const mongoose = require("mongoose");
+const { db } = require("./databse/dbConfig");
+
 const {
   fileLoader,
   mergeTypes,
