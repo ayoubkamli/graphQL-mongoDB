@@ -1,28 +1,20 @@
-import React, { useState } from "react";
-import ApolloClient, { gql } from "apollo-boost";
+import React from "react";
+import ApolloClient from "apollo-boost";
+import { ApolloProvider } from "@apollo/react-hooks";
+
+//import cmponents
+import Home from "./pages/Home";
 
 const client = new ApolloClient({
   uri: process.env.REACT_APP_GRAPHQL_ENDPOINT,
 });
 
 const App = () => {
-  const [posts, setPosts] = useState([]);
-
-  client
-    .query({
-      query: gql`
-        {
-          allPosts {
-            id
-            title
-            description
-          }
-        }
-      `,
-    })
-    .then((result) => setPosts(result.data.allPosts));
-
-  return <p>{JSON.stringify(posts)}</p>;
+  return (
+    <ApolloProvider client={client}>
+      <Home />
+    </ApolloProvider>
+  );
 };
 
 export default App;
