@@ -18,7 +18,7 @@ const Login = () => {
               onChange={(e) => setEmail(e.target.value)}
               className="form-control"
               placeholder="Enter Email"
-              desabled={loading}
+              disabled={loading}
             ></input>
           </div>
         </form>

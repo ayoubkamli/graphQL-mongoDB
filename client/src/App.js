@@ -7,6 +7,7 @@ import { ToastContainer } from "react-toastify";
 import Nav from "./components/Nav";
 import Login from "./pages/auth/Login";
 import Register from "./pages/auth/Register";
+import CompleteRegistration from "./pages/auth/CompleteRegistration";
 
 //import cmponents
 import Home from "./pages/Home";
@@ -24,6 +25,11 @@ const App = () => {
         <Route exact path="/register" component={Register} />
         <Route exact path="/login" component={Login} />
         <Route exact path="/" component={Home} />
+        <Route
+          exact
+          path="/complete-registration"
+          component={CompleteRegistration}
+        />
       </Switch>
     </ApolloProvider>
   );

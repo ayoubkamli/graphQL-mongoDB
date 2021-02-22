@@ -3,7 +3,7 @@ import { auth } from "../../firebase";
 import { toast } from "react-toastify";
 
 const Register = () => {
-  const [email, setEmail] = useState("");
+  const [email, setEmail] = useState("akamli1337@gmail.com");
   const [loading, setLoading] = useState(false);
 
   const handleSubmit = async (e) => {
@@ -21,7 +21,7 @@ const Register = () => {
     );
 
     //save user email to local storage
-    window.localStorage.setItem("emailFormRegistration", email);
+    window.localStorage.setItem("emailForRegistration", email);
     // clear state
     setEmail("");
     setLoading("");
