@@ -1,6 +1,12 @@
 import React from "react";
+import { Switch, Route } from "react-router-dom";
 import ApolloClient from "apollo-boost";
 import { ApolloProvider } from "@apollo/react-hooks";
+import { ToastContainer } from "react-toastify";
+
+import Nav from "./components/Nav";
+import Login from "./pages/auth/Login";
+import Register from "./pages/auth/Register";
 
 //import cmponents
 import Home from "./pages/Home";
@@ -12,7 +18,13 @@ const client = new ApolloClient({
 const App = () => {
   return (
     <ApolloProvider client={client}>
-      <Home />
+      <Nav />
+      <ToastContainer />
+      <Switch>
+        <Route exact path="/register" component={Register} />
+        <Route exact path="/login" component={Login} />
+        <Route exact path="/" component={Home} />
+      </Switch>
     </ApolloProvider>
   );
 };

@@ -1,4 +1,5 @@
-import * as firebase from firebase
+import firebase from "firebase/app";
+import "firebase/auth";
 
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
@@ -12,8 +13,8 @@ var firebaseConfig = {
   measurementId: "G-CJNWQ4JVL8",
 };
 // Initialize Firebase
+
 firebase.initializeApp(firebaseConfig);
 
-
-export const auth = firebase.auth()
-export const googleAuthProvider = new firebase.auth.googleAuthProvider()
+export const auth = firebase.auth();
+export const googleAuthProvider = new firebase.auth.GoogleAuthProvider();
